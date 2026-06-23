@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 
 export default function Home() {
   return (
@@ -31,7 +32,13 @@ export default function Home() {
             >
               Learning
             </a>{" "}
-            center.
+            center or the{" "}
+            <Link
+              href="/auth_files"
+              className="font-medium text-zinc-950 dark:text-zinc-50"
+            >
+              fake login page
+            </Link>{" "}
           </p>
         </div>
         <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
