@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
+import { navbar, link_package } from "./components";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -22,11 +23,24 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const acc_page: link_package = {
+    display_name: "Account",
+    link: "/account/profile",
+  };
+
+  const calendar_page: link_package = {
+    display_name: "Calendar",
+    link: "/calendar",
+  };
+
+  const navbar_links: link_package[] = [acc_page, calendar_page];
+
   return (
     <html
       lang="en"
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
+      {navbar(navbar_links)}
       <body className="min-h-full flex flex-col">{children}</body>
     </html>
   );
